@@ -35,6 +35,7 @@ const MoviesList = () => {
                 e.preventDefault();
                 dispatch(changePage({page: page}))
             }} style={page===1? {display:'none'}: {display: 'block'}}>{page}</button>
+            <div></div>
             <button onClick={(e) => {
                 e.preventDefault();
                 dispatch(changePage({page: page >= total_pages ? page - 2 : page + 1}))
