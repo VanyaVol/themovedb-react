@@ -1,0 +1,13 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    border-radius: 7px;
+    background-color: #fff;
+}
+
+.card > a > img {
+    width: 220px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
