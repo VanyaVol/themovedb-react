@@ -15,10 +15,10 @@ const MoviesList = () => {
 
 
     useEffect(() => {
-        if (search) {
+        if (!!search) {
             dispatch(getSearchMovie({search, page}));
-        } else if (genreId) {
-            dispatch(getDiscoverMovies({genreId, page}));
+        } else if (!!genreId) {
+            dispatch(getDiscoverMovies({genreId,page}));
         } else {
             dispatch(getNewestMovies(page));
         }

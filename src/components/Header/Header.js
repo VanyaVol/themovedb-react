@@ -40,7 +40,8 @@ const Header = () => {
                                 <li className={css.subMenuItems} key={itemGenre.id}>
                                     <Link to={'movies'} onClick={() => {
                                         dispatch(changeGenreId(itemGenre.id));
-                                        console.log(itemGenre.id)
+                                        dispatch(changeSearch(null));
+                                        dispatch(changePage({page: 1}))
                                     }}>{itemGenre.name}</Link>
                                 </li>
                             ))}
@@ -51,8 +52,8 @@ const Header = () => {
 
                 <li>
                     <Link to={'movies'} onClick={() => {
-                        dispatch(changeSearch(''))
-                        dispatch(changeGenreId(''))
+                        dispatch(changeSearch(null))
+                        dispatch(changeGenreId(null))
                         dispatch(changePage({page: 1}))
                     }}>Movies</Link>
                 </li>

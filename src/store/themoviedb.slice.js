@@ -2,7 +2,7 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import {theMovieDbService} from "../services";
 
 const initialState = {
-    movies: [], search: null, trigger: false, movie: {}, page: 1, status: null, errors: null, genres:[], genreId: null
+    movies: [], search: null, trigger: false, movie: {}, page: 1, status: null, errors: null, genres: [], genreId: null
 }
 
 const genresToMovie = (moviesArray, genres) => {
@@ -31,7 +31,7 @@ export const getNewestMovies = createAsyncThunk('themoviedbSlice/getNewestMovies
 
 export const getGenres = createAsyncThunk('themoviedbSlice/getGenres', async () => {
     try {
-        const {genres}=  await theMovieDbService.getGenres();
+        const {genres} = await theMovieDbService.getGenres();
 
         console.log(genres);
         return genres;
@@ -54,7 +54,9 @@ export const getSearchMovie = createAsyncThunk('themoviedbSlice/getSearchMovie',
     }
 });
 
-export const getDiscoverMovies = createAsyncThunk('themoviedbSlice/getDiscoverMovies', async ({genreId, page}) => {
+export const getDiscoverMovies = createAsyncThunk(
+    'themoviedbSlice/getDiscoverMovies',
+    async ({genreId, page}) => {
     try {
         const moviesArray = await theMovieDbService.getDiscoverMovie(genreId, page)
         const genres = await theMovieDbService.getGenres();
