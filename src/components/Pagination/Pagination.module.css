@@ -1,0 +1,35 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.btn {
+    height: 30px;
+    width: 35px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.activeBtn {
+    background-color: #cccccc;
+    border: 2px solid black;
+    color: black;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: black;
+    background-color: #cccccc;
+}
+

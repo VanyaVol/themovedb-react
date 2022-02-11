@@ -1,0 +1,12 @@
+.footer {
+    margin-top: 50px;
+    width: 100%;
+    border-top: 1px solid white;
+}
+
+.year {
+    display: flex;
+    justify-content: flex-end;
+    margin: 50px 10px;
+    color: white;
+}

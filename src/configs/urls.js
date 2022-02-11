@@ -5,10 +5,13 @@ export default baseURL;
 
 const urls = {
     genreMovieList: '/genre/movie/list',
+    movie: '/movie',
     movies: '/movies',
     moviePopular: '/movie/popular',
     newestMovies: '/movie/now_playing',
-    image: 'https://image.tmdb.org/t/p/w500'
+    trendingMoviesOfWeek: '/trending/movie/week',
+    searchMovie: '/search/movie',
+    discoverMovies: '/discover/movie'
 }
 
 export {urls};

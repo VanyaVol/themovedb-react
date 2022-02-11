@@ -9,6 +9,19 @@ const theMovieDbService = {
         params: {
             page: page
         }
+    }).then(value => value.data),
+    getTrendMovies: () => axiosService.get(urls.trendingMoviesOfWeek).then(value => value.data),
+    getSearchMovies: (query, page) => axiosService.get(urls.searchMovie, {
+        params: {
+            query: query,
+            page: page
+        }
+    }).then(value => value.data),
+    getDiscoverMovie: (idGenre, page)=> axiosService.get(urls.discoverMovies, {
+        params: {
+            with_genres: idGenre,
+            page: page
+        }
     }).then(value => value.data)
 }
 

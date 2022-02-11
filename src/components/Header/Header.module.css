@@ -50,6 +50,7 @@
     padding: 5px 40px;
     background-color: #ffffff;
     transition: 200ms;
+    border-bottom: 1px solid #f6f6f6;
 }
 
 .subMenuItems > a {

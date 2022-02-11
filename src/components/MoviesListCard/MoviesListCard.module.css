@@ -1,13 +1,86 @@
+.cardBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 7px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 200ms;
+}
+
+.cardBlock:hover {
+    transform: scale(1.04,1.04);
+    z-index: 9999;
+    transition: 200ms;
+
+}
+
 .card {
     display: flex;
     flex-direction: column;
-    width: 220px;
-    border-radius: 7px;
-    background-color: #fff;
+    width: 224px;
+    justify-content: flex-start;
+
 }
 
 .card > a > img {
-    width: 220px;
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 25px;
+    margin: 0 5px;
+}
+
+.title > a {
+    color: black;
+    transition: 200ms;
+}
+
+.title >a:hover {
+    color: #172c52;
+    transition: 200ms;
+}
+
+.genresBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 5px;
+}
+
+.genres {
+    padding: 1px 3px;
+    border: 1px solid black;
+    font-size: 13px;
+}
+
+.date {
+    margin: 0 5px;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.btn > a {
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    color: black;
+    transition: 200ms;
+}
+
+.btn > a:hover {
+    background-color: #dedede;
+    transition: 200ms;
 }
