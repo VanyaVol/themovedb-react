@@ -35,7 +35,7 @@ const Pagination = () => {
                 e.preventDefault();
                 dispatch(changePage({page: page}))
             }}
-                    className={(page < 2 ? css.hidden : `${css.btn} + ${css.activeBtn}`) && (page === total_pages ? css.hidden : `${css.btn} + ${css.activeBtn}`)}>
+                    className={page < 2 ? css.hidden : `${css.btn} + ${css.activeBtn}` && page === total_pages ? css.hidden : `${css.btn} + ${css.activeBtn}`}>
                 {page}
             </button>
 
