@@ -84,6 +84,8 @@
 }
 
 .btn > a:hover {
-    background-color: #dedede;
+    border: 1px solid #172c52;
+    background-color: #172c52;
+    color: white;
     transition: 200ms;
 }
