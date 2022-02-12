@@ -1,0 +1,70 @@
+.photo {
+    width: 500px;
+}
+
+.detailsBlock {
+    display: flex;
+    gap: 50px;
+}
+
+.details {
+    margin-top: 20px;
+    padding: 40px 30px;
+    background-color: #dadada;
+}
+
+.title {
+    color: #172c52;
+    font-size: 30px;
+}
+
+.overview {
+    margin-top: 10px;
+    color: black;
+    line-height: 20px;
+}
+
+.date {
+    display: block;
+    margin-top: 10px;
+    color: #172c52;
+}
+
+.genreBlock {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.genre {
+    padding: 1px 5px;
+    border: 1px solid black;
+    font-size: 13px;
+}
+
+.video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoBlock{
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: #dadada;
+
+}
+
+.textVideo {
+    color: #172c52;
+    font-size: 30px;
+    margin-left: 40px;
+}
+
+.rate {
+    margin-top: 20px;
+}
+
+.textRating{
+    margin-bottom: 10px;
+}

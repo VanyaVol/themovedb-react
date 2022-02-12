@@ -22,7 +22,8 @@ const theMovieDbService = {
             with_genres: idGenre,
             page: page
         }
-    }).then(value => value.data)
+    }).then(value => value.data),
+    getVideoByIdMovie: (id)=> axiosService.get(`${urls.movie}/${id}${urls.videos}`).then(value => value.data)
 }
 
 export {theMovieDbService}

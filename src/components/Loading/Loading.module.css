@@ -11,11 +11,11 @@
     height: 350px;
     width: 350px;
     border-radius: 50%;
-    border: 10px solid white;
+    border: 10px solid var(--text-color);
 }
 
 .text {
-    color: white;
+    color: var(--text-color);
     font-size: 30px;
     letter-spacing: 10px;
 }

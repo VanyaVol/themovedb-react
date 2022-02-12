@@ -1,12 +1,18 @@
+.footerBlock {
+    margin-top: 20px;
+    background-color: #172c52;
+}
+
 .footer {
-    margin-top: 50px;
+    margin: 0 auto;
+    max-width: 1200px;
     width: 100%;
-    border-top: 1px solid white;
+    border-top: var(--border-footer);
 }
 
 .year {
     display: flex;
     justify-content: flex-end;
-    margin: 50px 10px;
-    color: white;
+    padding: 50px 10px;
+    color: var(--text);
 }

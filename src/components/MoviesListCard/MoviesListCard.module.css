@@ -3,14 +3,15 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 7px;
-    background-color: #fff;
+    background-color: var(--background-card);
     overflow: hidden;
     transition: 200ms;
+    outline: var(--border);
 }
 
 .cardBlock:hover {
     transform: scale(1.04,1.04);
-    z-index: 9999;
+    z-index: 99;
     transition: 200ms;
 
 }
@@ -20,7 +21,6 @@
     flex-direction: column;
     width: 224px;
     justify-content: flex-start;
-
 }
 
 .card > a > img {
@@ -31,10 +31,13 @@
     border-top-right-radius: 7px;
 }
 
+.cardTitleBlock {
+    margin: 5px;
+}
+
 .title {
     font-size: 20px;
-    line-height: 25px;
-    margin: 0 5px;
+    line-height: 23px;
 }
 
 .title > a {
@@ -51,7 +54,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin: 5px;
+    margin-top: 3px;
 }
 
 .genres {
@@ -61,9 +64,9 @@
 }
 
 .date {
-    margin: 0 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-
 
 .btn {
     display: flex;

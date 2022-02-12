@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+
+import css from "./MoviesPages.module.css";
 import {MoviesList} from "../../components";
 
 const MoviesPage = () => {
-
     return (
-        <div>
+        <div className={css.moviesPage}>
             <MoviesList/>
         </div>
     );

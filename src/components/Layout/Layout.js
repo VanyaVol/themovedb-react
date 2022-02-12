@@ -1,15 +1,15 @@
-import React from 'react';
-import {Outlet} from 'react-router-dom';
+import React from "react";
+import {Outlet} from "react-router-dom";
 
-import css from './Layout.module.css';
-
-import {Header} from "../Header/Header";
-import {Footer} from "../Footer/Footer";
+import css from "./Layout.module.css";
+import {Header, Footer} from "./../../components";
 
 const Layout = () => {
-    return (<div className={css.wrap}>
+    return (<div>
         <Header/>
-        <Outlet/>
+        <div className={css.wrap}>
+            <Outlet/>
+        </div>
         <Footer/>
     </div>);
 };
