@@ -5,12 +5,14 @@ import StarRatings from "react-star-ratings/build/star-ratings";
 import Iframe from "react-iframe";
 
 import css from "./MovieDetails.module.css";
-import {getMoviesById, getVideoById} from "../../store";
+import {getMoviesById, getReviewsById, getVideoById} from "../../store";
 import {urlsConst} from "../../constansts/urls";
 import {Loading} from "../../components";
+import {GenreBadge} from "../GenreBadge/GenreBadge";
+import {ReviewCard} from "../ReviewCard/ReviewCard";
 
 const MovieDetails = () => {
-    const {movie, status, videos} = useSelector(state => state["themoviedbReducer"]);
+    const {movie, status, videos, reviews} = useSelector(state => state["themoviedbReducer"]);
     const dispatch = useDispatch();
 
     const {id} = useParams();
@@ -19,11 +21,9 @@ const MovieDetails = () => {
 
     useEffect(() => {
         dispatch(getMoviesById({id}));
-    }, []);
-
-    useEffect(() => {
         dispatch(getVideoById({id}));
-    }, [videos])
+        dispatch(getReviewsById({id}));
+    }, []);
 
     return (<div>
         {status === "pending" ? <Loading/> : <div>
@@ -38,8 +38,7 @@ const MovieDetails = () => {
                     <div>
                         <h2 className={css.title}>{title}</h2>
                         <div className={css.genreBlock}>
-                            {genres?.map(itemGenre => <span className={css.genre}
-                                                            key={itemGenre.id}>{itemGenre.name}</span>)}
+                            {genres?.map(itemGenre => <GenreBadge key={itemGenre?.id} genre={itemGenre}/>)}
                         </div>
                         <p className={css.overview}>{overview}</p>
                         <span className={css.date}>{release_date}</span>
@@ -61,6 +60,14 @@ const MovieDetails = () => {
                                 frameBorder="0"/>}
                 </div>
             </div>
+
+            {!!reviews.results?.length && <div className={css.videoBlock}>
+                <h2 className={css.textVideo}>{'Reviews'}</h2>
+                <div className={css.rateBlock}>
+                    {reviews.results && reviews?.results.map(itemReview => <ReviewCard key={itemReview.id}
+                                                                                       review={itemReview}/>)}
+                </div>
+            </div>}
         </div>}
     </div>);
 }

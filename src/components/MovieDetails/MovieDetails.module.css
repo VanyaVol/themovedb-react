@@ -36,11 +36,7 @@
     margin-top: 5px;
 }
 
-.genre {
-    padding: 1px 5px;
-    border: 1px solid black;
-    font-size: 13px;
-}
+
 
 .video {
     display: flex;
@@ -67,4 +63,11 @@
 
 .textRating{
     margin-bottom: 10px;
+}
+
+.rateBlock {
+    display: flex;
+    gap: 10px;
+    margin: 0 40px;
+    flex-wrap: wrap;
 }

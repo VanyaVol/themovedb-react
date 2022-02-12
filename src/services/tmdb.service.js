@@ -10,7 +10,6 @@ const theMovieDbService = {
             page: page
         }
     }).then(value => value.data),
-    getTrendMovies: () => axiosService.get(urls.trendingMoviesOfWeek).then(value => value.data),
     getSearchMovies: (query, page) => axiosService.get(urls.searchMovie, {
         params: {
             query: query,
@@ -23,7 +22,8 @@ const theMovieDbService = {
             page: page
         }
     }).then(value => value.data),
-    getVideoByIdMovie: (id)=> axiosService.get(`${urls.movie}/${id}${urls.videos}`).then(value => value.data)
+    getVideoByIdMovie: (id)=> axiosService.get(`${urls.movie}/${id}${urls.videos}`).then(value => value.data),
+    getReviewsById: (id)=> axiosService.get(`${urls.movie}/${id}${urls.review}`).then(value => value.data)
 }
 
 export {theMovieDbService}

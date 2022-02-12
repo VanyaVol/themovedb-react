@@ -5,6 +5,7 @@ import StarRatings from "react-star-ratings/build/star-ratings";
 import css from "./MoviesListCard.module.css";
 import {urlsConst} from "../../constansts/urls";
 import {urls} from "../../configs/urls";
+import {GenreBadge} from "../GenreBadge/GenreBadge";
 
 const MoviesListCard = ({movie}) => {
     const {id, title, poster_path, release_date, genres, vote_average} = movie;
@@ -21,8 +22,7 @@ const MoviesListCard = ({movie}) => {
                 </div>
 
                 <div className={css.genresBlock}>
-                    {genres?.map(itemGenre => <span className={css.genres}
-                                                    key={itemGenre.id}>{itemGenre.genres}</span>)}
+                    {genres?.map(itemGenre => <GenreBadge key={itemGenre.id} genre={itemGenre}/>)}
                 </div>
 
                 <div className={css.date}>

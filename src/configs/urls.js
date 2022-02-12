@@ -11,7 +11,8 @@ const urls = {
     trendingMoviesOfWeek: "/trending/movie/week",
     searchMovie: "/search/movie",
     discoverMovies: "/discover/movie",
-    videos: `/videos`
+    videos: `/videos`,
+    review: '/reviews'
 }
 
 export {urls};

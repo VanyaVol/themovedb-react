@@ -8,11 +8,11 @@ const initialState = {
     movie: {},
     page: 1,
     status: null,
-    errors: null,
     genres: [],
     genreId: null,
     videos: [],
-    theme: "dark"
+    theme: "dark",
+    reviews: []
 }
 
 const genresToMovie = (moviesArray, genres) => {
@@ -21,7 +21,7 @@ const genresToMovie = (moviesArray, genres) => {
         for (let j = 0; j < moviesArray.results[i].genre_ids.length; j++) {
             for (let k = 0; k < genres.length; k++) {
                 if (moviesArray.results[i].genre_ids[j] === genres[k].id) {
-                    moviesArray.results[i].genres.push({genres: genres[k].name, id: genres[k].id});
+                    moviesArray.results[i].genres.push({name: genres[k].name, id: genres[k].id});
                 }
             }
         }
@@ -37,6 +37,16 @@ export const getNewestMovies = createAsyncThunk(
             return {moviesArray, genres}
         } catch (e) {
             return await e.message();
+        }
+    });
+
+export const getReviewsById = createAsyncThunk(
+    "themoviedbSlice/getReviewsById",
+    async ({id}) => {
+        try {
+            return  theMovieDbService.getReviewsById(id);
+        } catch (e) {
+            console.log(e.message());
         }
     });
 
@@ -112,9 +122,7 @@ const themoviedbSlice = createSlice({
     },
     extraReducers: {
         [getNewestMovies.pending]: (state) => {
-            state.status = "pending";
-            state.errors = null;
-        },
+            state.status = "pending";},
         [getNewestMovies.fulfilled]: (state, action) => {
             const {genres} = action.payload.genres;
             const moviesArray = action.payload.moviesArray;
@@ -123,9 +131,6 @@ const themoviedbSlice = createSlice({
             state.movies = action.payload.moviesArray;
 
             genresToMovie(moviesArray, genres);
-        },
-        [getNewestMovies.rejected]: (state, action) => {
-            state.errors = action.payload;
         },
         [getMoviesById.pending]: (state) => {
             state.status = "pending";
@@ -155,6 +160,9 @@ const themoviedbSlice = createSlice({
         },
         [getVideoById.fulfilled]: (state, action) => {
             state.videos = action.payload;
+        },
+        [getReviewsById.fulfilled]: (state, action) =>  {
+            state.reviews = action.payload;
         }
     }
 });

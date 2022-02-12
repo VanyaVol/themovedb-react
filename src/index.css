@@ -18,7 +18,7 @@ html[class='dark'] {
 
 html[class='light'] {
     --background-color: #fdfdfd;
-    --background-card: #eaeaea;
+    --background-card: #ffffff;
     --border: 1px solid black;
     --text: #ffffff;
     --border-footer: none;
