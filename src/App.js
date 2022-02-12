@@ -2,7 +2,6 @@ import {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {Routes, Route, Navigate} from "react-router-dom";
 
-import "./App.css";
 import {Layout, MovieDetails} from "./components";
 import {MoviesPage, NotFoundPage} from "./pages";
 
