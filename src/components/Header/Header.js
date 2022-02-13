@@ -15,8 +15,8 @@ const Header = () => {
     const {genres, theme} = useSelector(state => state['themoviedbReducer']);
 
     const onSubmitF = (data) => {
-        dispatch(changeSearch(data.search));
         dispatch(changePage({page: 1}));
+        dispatch(changeSearch(data.search));
         navigate("/movies");
         reset();
     }
